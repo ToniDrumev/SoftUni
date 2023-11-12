@@ -1,3 +1,6 @@
+from datetime import timedelta
+
+from django.core.exceptions import ValidationError
 from django.db import models
 
 
@@ -150,3 +153,169 @@ class Message(models.Model):
 			receiver=receiver,
 			content=self.content,
 		)
+
+
+class StudentIDField(models.PositiveIntegerField):
+	def to_python(self, value):
+		try:
+			return int(value)
+		except ValueError:
+			pass
+
+
+class Student(models.Model):
+	name = models.CharField(
+		max_length=100,
+	)
+
+	student_id = StudentIDField()
+
+
+class MaskedCreditCardField(models.CharField):
+	def __init__(self, *args, **kwargs):
+		kwargs['max_length'] = 20
+		super().__init__(*args, **kwargs)
+
+	def to_python(self, value):
+		if not isinstance(value, str):
+			raise ValidationError("The card number must be a string")
+
+		if not all(c.isdigit() for c in value):
+			raise ValidationError("The card number must contain only digits")
+
+		if not len(value) == 16:
+			raise ValidationError("The card number must be exactly 16 characters long")
+
+		return f"{(('*' * 4) + '-') * 3}{value[-4:]}"
+
+
+class CreditCard(models.Model):
+	card_owner = models.CharField(
+		max_length=100,
+	)
+
+	card_number = MaskedCreditCardField()
+
+
+class Hotel(models.Model):
+	name = models.CharField(
+		max_length=100,
+	)
+
+	address = models.CharField(
+		max_length=200,
+	)
+
+
+class Room(models.Model):
+	hotel = models.ForeignKey(
+		to=Hotel,
+		on_delete=models.CASCADE,
+	)
+
+	number = models.CharField(
+		max_length=100,
+		unique=True,
+	)
+
+	capacity = models.PositiveIntegerField()
+
+	total_guests = models.PositiveIntegerField()
+
+	price_per_night = models.DecimalField(
+		max_digits=10,
+		decimal_places=2,
+	)
+
+	def clean(self):
+		if self.total_guests > self.capacity:
+			raise ValidationError("Total guests are more than the capacity of the room")
+
+	def save(self, *args, **kwargs):
+		self.clean()
+
+		super().save(*args, **kwargs)
+
+		return f"Room {self.number} created successfully"
+
+
+class BaseReservation(models.Model):
+	room = models.ForeignKey(
+		to=Room,
+		on_delete=models.CASCADE,
+	)
+
+	start_date = models.DateField()
+
+	end_date = models.DateField()
+
+	class Meta:
+		abstract = True
+
+	def reservation_period(self) -> int:
+		return (self.end_date - self.start_date).days
+
+	def calculate_total_cost(self) -> int:
+		total_cost = self.room.price_per_night * self.reservation_period()
+
+		return round(total_cost, 1)
+
+
+class RegularReservation(BaseReservation):
+	def clean(self):
+		if self.start_date >= self.end_date:
+			raise ValidationError("Start date cannot be after or in the same end date")
+
+		reservations = RegularReservation.objects.filter(
+			room=self.room,
+			start_date__lte=self.end_date,
+			end_date__gte=self.start_date,
+		)
+
+		if reservations.exists():
+			raise ValidationError(f"Room {self.room.number} cannot be reserved")
+
+	def save(self, *args, **kwargs):
+		self.clean()
+
+		super().save(*args, **kwargs)
+
+		return f"Regular reservation for room {self.room.number}"
+
+
+class SpecialReservation(BaseReservation):
+	def clean(self):
+		if self.start_date >= self.end_date:
+			raise ValidationError("Start date cannot be after or in the same end date")
+
+		reservations = SpecialReservation.objects.filter(
+			room=self.room,
+			start_date__lte=self.end_date,
+			end_date__gte=self.start_date,
+		)
+
+		if reservations.exists():
+			raise ValidationError(f"Room {self.room.number} cannot be reserved")
+
+	def save(self, *args, **kwargs):
+		self.clean()
+
+		super().save(*args, **kwargs)
+
+		return f"Special reservation for room {self.room.number}"
+
+	def extend_reservation(self, days: int):
+		existing_rooms = SpecialReservation.objects.filter(
+			room=self.room,
+			start_date__lte=self.end_date + timedelta(days),
+			end_date__gte=self.start_date,
+		)
+
+		if existing_rooms:
+			raise ValidationError("Error during extending reservation")
+
+		self.end_date += timedelta(days=days)
+
+		self.save()
+
+		return f"Extended reservation for room {self.room.number} with {days} days"
