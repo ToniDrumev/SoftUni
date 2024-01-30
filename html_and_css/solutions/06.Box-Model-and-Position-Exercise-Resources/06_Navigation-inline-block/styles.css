@@ -1,0 +1,32 @@
+body {
+    padding: 4em;
+    font: 16px/1.5 Helvetica, sans-serif;
+}
+
+header {
+    border-bottom: 2px solid gray;
+}
+
+header p,
+header nav {
+    display: inline-block;
+}
+
+header nav ul li{
+    display: inline-block;
+    padding: 0 0.5em;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: rgb(122, 219, 164);
+    padding: 0.5em;
+}
+
+header .site-title a {
+    font-size: 3em;
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+

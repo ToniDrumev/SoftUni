@@ -1,0 +1,56 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css);
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.card {
+    max-width: 400px;
+    overflow: hidden;
+    border-radius: 0.4em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 1em 0.5em rgba(0, 0, 0, 0.5);
+}
+
+.card::before {
+    display: block;
+    content: '';
+    position: absolute;
+    inset: 0;
+    box-shadow: 0 0 1.5em 0.7em rgb(74, 76, 74) inset;
+}
+
+.card svg {
+    display: block;
+    width: 1.5em;
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+    fill: rgb(240, 248, 255, 0.9);
+}
+
+.viewport {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.viewport:nth-child(1) {
+    background: rgb(70,108,201);
+    background: linear-gradient(90deg, rgba(70,108,201,1) 15%, rgba(71,112,200,1) 17%, rgba(102,213,178,1) 72%);
+}
+
+.viewport:nth-child(2) {
+    background: rgb(201,70,198);
+    background: linear-gradient(90deg, rgba(201,70,198,1) 0%, rgba(209,94,18,1) 50%, rgba(244,155,53,1) 100%);
+}
