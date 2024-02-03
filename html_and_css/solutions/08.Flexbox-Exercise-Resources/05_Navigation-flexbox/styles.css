@@ -1,0 +1,51 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 4em;
+}
+
+header {
+    border-bottom: 2px solid rgb(0, 0, 0);
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 0;
+}
+
+main {
+    padding-top: 1.5em;
+}
+
+h1 {
+    font-weight: 500;
+}
+
+p {
+    font: 16px/1.5 Arial, sans-serif;
+    padding: 1em 0;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+}
+
+li {
+    padding: 0 0.5em;
+}
+
+a {
+    color: rgb(0, 153, 0);
+    text-decoration: none;
+}
+
+.site-title {
+    font-family: Roboto, sans-serif;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    font-weight: 600;
+}
