@@ -1,0 +1,50 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(238, 238, 238);
+    height: 100vh;
+    font-family: Helvetica, sans-serif;
+
+}
+
+header {
+    flex: 0 0;
+    border-bottom: 2px solid #000;
+}
+
+main {
+    padding: 2em;
+    flex-grow: 1;
+}
+
+h2 {
+    font-size: 1.5em;
+    font-family: Georgia, serif;
+    font-weight: 300;
+    padding-bottom: 1em;
+}
+
+p {
+    padding-bottom: 1em;
+}
+
+footer {
+    color: rgb(255, 255, 255);
+    background-color: rgb(102, 102, 102);
+    align-items: end;
+    flex: 0 0;
+    padding: 1em 0 0 2em;
+}
+
+.site-title {
+    font: 2em Roboto, sans-serif;
+    padding: 1em;
+    font-weight: 600;
+    text-transform: uppercase;
+}

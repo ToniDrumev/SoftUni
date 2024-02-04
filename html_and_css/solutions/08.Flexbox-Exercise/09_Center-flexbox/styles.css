@@ -1,0 +1,27 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(238, 238, 238);
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background-color: rgb(255, 255, 255);
+    width: 20%;
+    padding: 1em 0.5em 2em;
+    box-shadow: 
+        0 0 1em 0 rgba(0, 0, 0, 0.5),
+        0 0 0.5em 0 rgba(0, 0, 0, 0.3) inset;    
+}
+
+.card-title {
+    font-weight: 600;
+    padding-bottom: 0.5em;
+}
