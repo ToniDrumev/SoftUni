@@ -1,0 +1,54 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(238, 238, 238);
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.cards-layout {
+    max-width: 50em;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    gap: 1em;
+}
+
+.card {
+    width: 30%;
+    height: auto;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+    box-shadow: 
+        0 0 1em 0 rgba(0, 0, 0, 0.4),
+        0 0 0.5em 0 rgba(0, 0, 0, 0.3) inset;
+}
+
+.card section,
+.card footer {
+    padding: 1em;
+}
+
+.card section {
+    flex: 1 0 auto;
+}
+
+.card footer {
+    align-self: flex-end;
+    border-top: 1px solid #ddd;
+}
+
+.cards-layout h2 {
+    flex-basis: 100%;
+    padding: 1em 0;
+}
