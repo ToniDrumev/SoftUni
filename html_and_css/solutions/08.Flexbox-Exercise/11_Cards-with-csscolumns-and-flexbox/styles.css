@@ -22,6 +22,16 @@ img {
     gap: 1em;
 }
 
+.flex{
+    flex-direction: row;
+}
+
+.masonry {
+    align-items: flex-start;
+    flex-direction: column; 
+    max-height: 200vh;
+}
+
 .card {
     width: 30%;
     height: auto;
