@@ -1,0 +1,40 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font: 16px/1.5 Verdana, sans-serif;
+}
+
+body {
+    padding: 2em;
+    background-color: #ddd;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid black;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+}
+
+header nav ul li {
+    padding: 0 2em;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: green;
+}
+
+.site-title {
+    font-size: 2em;
+    font-weight: bold;
+    text-transform: uppercase;
+}

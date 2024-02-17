@@ -1,0 +1,66 @@
+@media (max-width: 600px) {
+    .row {
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    .placeholder {
+        height: 200px;
+    }
+
+    .parallax-window {
+        height: 200px;
+    }
+
+    .tm-nav-ul {
+        justify-content: center;
+    }
+
+    .tm-site-text-box {
+        text-align: center;
+    }
+
+    .tm-section-title {
+        margin-left: 0;
+        padding: 0 3em;
+    }
+
+    .tm-welcome-section {
+        margin: 25px auto;
+    }
+
+    .tm-paging-links {
+        margin-bottom: 10px;
+    }
+
+    .tm-gallery {
+        margin: 0;
+    }
+
+    .tm-gallery-page {
+        margin: 0 auto;
+        justify-content: center;
+    }
+
+    .tm-gallery-item {
+        max-width: 80%;
+    }
+
+    .tm-gallery-title {
+        text-align: center;
+    }
+
+    .tm-gallery-price {
+        margin-bottom: 30px;
+    }
+
+    .tm-cta-section {
+        width: auto;
+    }
+
+    .tm-description-figure {
+        width: auto;
+    }
+
+}
