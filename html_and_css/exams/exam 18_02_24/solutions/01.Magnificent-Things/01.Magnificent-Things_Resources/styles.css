@@ -1,0 +1,89 @@
+@import url(https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap);
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font: 16px/1.5 Inter, sans-serif;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+body {
+    
+    background-color: #85DCFF;
+    padding: 4.35em 1.87em;
+}
+
+div.card {
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 1060px;
+    margin: 0 auto;
+}
+
+div.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 5.62em;
+}
+
+div.content h2 {
+    font-size: 2.5em;
+    line-height: 1em;
+    padding-bottom: 0.8em;
+    width: 70%;
+}
+
+div.content p{
+    font-size: 0.875em;
+    color: darkslategray;
+    line-height: 1em;
+}
+
+div.image {
+    width: 50%;
+    box-shadow: 0.5em 0.5em 1em 0 rgba(0, 0, 0, 0.9);
+}
+
+div.buttons {
+    display: flex;
+    gap: 0.6em;
+    padding-top: 2em;
+    
+}
+
+div.button-1 a,
+div.button-2 a {
+    border-radius: 0.25em;
+    padding: 0.75em 1.5em;
+}
+
+div.button-1 a {
+    border: 1px solid black;
+    background-color: #42AA59;
+}
+
+div.button-2 a {
+    border: 1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+
+div.buttons a {
+    font-size: 0.87em;
+    text-decoration: none;
+    color: darkslategray;
+}
+
+div.buttons a:hover {
+    color: #FFFFFF;
+    background-color: #000000;
+}

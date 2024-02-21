@@ -1,0 +1,204 @@
+@import url(https://fonts.googleapis.com/css2?family=Karla&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Cormorant+Infant&display=swap);
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font: 16px/1.5 'Cormorant Infant';
+}
+
+body {
+    background-color: #F8F0E9;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+header {
+    display: flex;
+    background-image: url(images/poster.jpg);
+    flex-direction: column;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+div.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 2em;
+}
+
+div.header span.logo {
+    width: 5em;
+}
+
+.header nav ul {
+    display: flex;
+    gap: 3em;
+}
+
+.header nav ul li {
+    list-style: none;
+}
+
+.header nav ul li a {
+    font-family: Karla;
+    text-decoration: none;
+    color: #FFFFFF;
+
+}
+
+header h1 {
+    color: #FFFFFF;
+    font-size: 5.625em;
+    font-weight: bolder;
+    padding-top: 1.5em;
+}
+
+header p.footer {
+    font-family: Karla;
+    color: #FFFFFF;
+    font-size: 1.2em;
+    padding: 5em 30%;
+}
+
+section.reviews {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 30%;
+}
+
+section.reviews p.customer {
+    font-family: Karla;
+    color: darkslategray;
+    align-self: flex-start;
+    font-size: 0.8em;
+    padding-top: 2em;
+}
+
+p.review {
+    font-size: 2.5em;
+    line-height: 1;
+    font-style: italic;
+    font-weight: bold;
+    padding: 1em 0;
+}
+
+section.support {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3em 42%;
+    background-color: #E14747;
+    color: #FFFFFF;
+    gap: 2em;
+    font-family: Karla;
+}
+
+section.support h5 {
+    font-size: 1.1em;
+}
+
+section.support p {
+    font-size: 0.9em;
+    text-align: center;
+}
+
+section.articles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3em 40%;
+    color: darkslategray;
+}
+
+section.articles h2 {
+    font-size: 2.2em;
+    text-align: center;
+    padding: 1em 0.5em;
+}
+
+section.articles p {
+    font-family: Karla;
+    font-size: 0.75em;
+    line-height: 1;
+    padding-bottom: 3em;
+}
+
+section.articles a.button {
+    font-family: Karla;
+    font-size: 12px;
+    text-decoration: none;
+    color: black;
+    background-color: #FFFFFF;
+    border: 1px solid black;
+    border-radius: 0.3em;
+    padding: 0.5em 1em;
+}
+
+section.articles article {
+    padding-bottom: 2.5em;
+}
+
+section.find-local {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #E14747;
+    color: #FFFFFF;
+    padding-bottom: 5em;
+}
+
+section.find-local h2 {
+    font-size: 2.8em;
+    padding: 1em 0;
+}
+
+section.find-local p {
+    font-family: Karla;
+    padding: 0 30% 3em;
+}
+
+section.find-local a.button {
+    font-family: Karla;
+    color: black;
+    background-color: #FAD87A;
+    text-decoration: none;
+    border-radius: 5em;
+    padding: 0.8em 1.2em;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    background-color: #352B2A;
+    color: #FFFFFF;
+    padding: 3em 7em;
+}
+
+footer div.logo {
+    width: 3.5em;
+    padding-bottom: 2em;
+}
+
+footer p {
+    font-family: Karla;
+    font-size: 0.9em;
+    width: 25%;
+    padding-bottom: 2em;
+}
+
+footer p.footer {
+    color: #5B4E4E;
+    padding-bottom: 0;
+}
