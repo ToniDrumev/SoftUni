@@ -25,11 +25,10 @@ function solve(base, increment) {
         base -= 2;
     }
 
-    console.log(`Stone required: ${Math.round(stoneRequired)}`);
-    console.log(`Marble required: ${Math.round(marbleRequired)}`);
-    console.log(`Lapis Lazuli required: ${Math.round(lapisLazuliRequired)}`);
-    console.log(`Gold required: ${Math.round(goldRequired)}`);
+    console.log(`Stone required: ${Math.ceil(stoneRequired)}`);
+    console.log(`Marble required: ${Math.ceil(marbleRequired)}`);
+    console.log(`Lapis Lazuli required: ${Math.ceil(lapisLazuliRequired)}`);
+    console.log(`Gold required: ${Math.ceil(goldRequired)}`);
     console.log(`Final pyramid height: ${Math.trunc(pyramidHeight)}`);
 }
 
-solve(20, 1)
