@@ -28,7 +28,3 @@ function signChecker(numOne, numTwo, numThree) {
     }
 }
 
-console.log(signChecker(-1,
-    -2,
-    -3
-   ));
